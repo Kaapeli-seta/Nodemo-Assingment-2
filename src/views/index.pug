@@ -11,10 +11,14 @@ html(lang="en")
     h2 Mock data titles
 
     div
-      ul
-        each item in exampleData
-            li= item.title
-                p= item.description
-            a(href="/media/" + item.filename)
-                button(type="button") View image
-            hr
+        a(href="/api/media/json")
+            button(type="button") View JSON
+        ul
+            each item in mediaData
+                li= item.title
+                    p= item.description
+                a(href="/media/" + item.filename)
+                    button(type="button") View image
+                a(href="/api/media/" + item.media_id)
+                    button(type="button") View JSON data
+                hr

@@ -76,4 +76,12 @@ const getItemById = (req, res) => {
   }
 };
 
-export {getItmes, postItmes, getItemById, mediaItems};
+const putItemById = (req, res) => {
+  const id = parseInt(req.params.id);
+  let item = mediaItems.findIndex((item) => item.media_id === id);
+  //unfinished
+
+  res.status(201).json({item});
+};
+
+export {getItmes, postItmes, getItemById, putItemById, mediaItems};
