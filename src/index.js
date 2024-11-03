@@ -1,7 +1,13 @@
 // index.js
 
 import express from 'express';
-import {postItmes, getItemById, mediaItems, getItmes} from './media.js';
+import {
+  postItmes,
+  getItemById,
+  mediaItems,
+  getItmes,
+  putItemById,
+} from './media.js';
 const hostname = '127.0.0.1';
 const app = express();
 const port = 3000;
@@ -32,7 +38,7 @@ app.post('/api/media', (req, res) => {
 
 app.put('/api/media/:id', (req, res) => {
   //Todo: implement this endpoint
-  res.status(501).json({mssage: 'under costruction'});
+  putItemById(req, res);
 });
 
 app.listen(port, hostname, () => {

@@ -79,8 +79,7 @@ const getItemById = (req, res) => {
 const putItemById = (req, res) => {
   const id = parseInt(req.params.id);
   let item = mediaItems.findIndex((item) => item.media_id === id);
-  //unfinished
-
+  mediaItems[item] = {...mediaItems[item], ...req.body};
   res.status(201).json({item});
 };
 
